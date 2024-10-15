@@ -1,38 +1,85 @@
+* {
+  box-sizing: border-box;
+}
 .App {
+  padding: 50px;
+  display: flex;
+}
+.App>div {
+  margin-right: 50px;
+}
+.todolist {
+  border: 2px solid darkblue;
+  border-radius: 5px;
+  background-color: beige;
+  padding: 20px;
+
+}
+
+.todolist h3{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mainUserInput {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid darkgrey;
+  border-radius: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.todolist button {
+  padding: 10px;
+  background-color: lightblue;
+  border: 1px solid darkblue;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  cursor: pointer;
+  transition: background-color 1s;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.todolist button:hover {
+  background-color: darkblue;
+}
+.todolist ul li {
+  list-style: none;
+  color: darkblue;
+  font-family: "Rage Italic";
+  font-size: 1em;
+}
+.todolist ul button {
+  padding: 5px;
+}
+.filterButtons {
+  display: flex;
+  justify-content: center;
+}
+.task {
+  font-weight: bold;
+}
+.task-done {
+  text-decoration: line-through;
+  opacity: 0.5;
+  transition: text-decoration ease-in-out 1s, opacity ease-in-out 1s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.filter-btn-active {
+  background-color: darkblue !important;
+  font-weight: bold;
+  color: white;
+  border: 2px solid black;
+}
+@keyframes extend {
+  100% {
+    width: 30%;
   }
 }
+.button-extend {
+  animation: extend 1s ease forwards;
+}
+.task-input-error {
+  border: 2px solid red;
+  outline: none;
+}
+.task-input-error-message {
+  font-weight: bold;
+  color: red;
+}
+
